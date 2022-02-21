@@ -1,4 +1,7 @@
 import annotations.FieldsEntity
+import annotations.IgnoreField
+import annotations.SpecifyEntityClass
+
 
 fun main(args: Array<String>) {
     println("Hello World!")
@@ -10,15 +13,17 @@ fun main(args: Array<String>) {
 }
 
 
-@FieldsEntity
+@FieldsEntity(Entity1::class)
 data class Entity1(
     val name: String,
     val description: String
 )
 
-@FieldsEntity
+@FieldsEntity(Entity2::class)
 data class Entity2(
+    @IgnoreField
     val name: String,
-    val count: Long,
+    var count: Long,
+    @SpecifyEntityClass(Entity1::class)
     val entity1: Entity1
 )

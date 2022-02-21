@@ -13,5 +13,6 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(project(":annotations"))
-    compileOnly("com.squareup:kotlinpoet:1.10.2")
+    implementation("com.squareup:kotlinpoet:1.10.2")
+    implementation("com.squareup:kotlinpoet-metadata:1.10.2")
 }
